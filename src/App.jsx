@@ -6,7 +6,7 @@ import Contact from "./components/Contact";
 
 export default function App() {
   return (
-    <div>
+    <div style={{ backgroundColor: "#f6f4f4" }}>
       <head>
         <style>
           {`
