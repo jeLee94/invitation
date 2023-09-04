@@ -25,15 +25,23 @@ const Thanks = () => {
       </Content>
       <IntroduceContainer>
         <IntroduceWrapper>
-          <Introduce>김환 . 윤은숙의</Introduce>
+          <Introduce>
+            <span style={{ color: "#000" }}>김환 . 윤은숙</span>의
+          </Introduce>
           <Introduce>아들</Introduce>
-          <Introduce>김성훈</Introduce>
+          <Introduce>
+            <span style={{ color: "#000" }}>김성훈</span>
+          </Introduce>
         </IntroduceWrapper>
         <ReverseLine />
         <IntroduceWrapper>
-          <Introduce>장세탁 . 이인화의</Introduce>
+          <Introduce>
+            <span style={{ color: "#000" }}>장세탁 . 이인화</span>의
+          </Introduce>
           <Introduce>딸</Introduce>
-          <Introduce>장보경</Introduce>
+          <Introduce>
+            <span style={{ color: "#000" }}>장보경</span>
+          </Introduce>
         </IntroduceWrapper>
       </IntroduceContainer>
       {/* <Image /> */}
@@ -46,7 +54,7 @@ export default Thanks;
 const ThanksContainer = styled.header`
   max-width: 400px;
   background-color: #fff;
-  color: #000;
+  color: #3e3e3e;
   font-family: "MapoFlowerIsland";
   text-align: center;
   margin: 0 auto;
@@ -63,7 +71,7 @@ const Image = styled.img`
 `;
 
 const ReverseLine = styled.div`
-  height: 50px;
+  height: 60px;
   width: 1px;
   background-color: #e1e1e1;
   margin: 10px 0;
@@ -82,7 +90,8 @@ const Content = styled.div`
 const Introduce = styled.div`
   font-size: 1rem;
   font-weight: bold;
-  padding: 0;
+  padding: 5px 0;
+  color: #a7a6a6;
 `;
 
 const IntroduceWrapper = styled.div`
