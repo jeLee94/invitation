@@ -8,12 +8,12 @@ const Location = () => {
     script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NAVER_MAP_API_KEY}`;
     script.onload = () => {
       const map = new window.naver.maps.Map("map", {
-        center: new window.naver.maps.LatLng(37.545632, 127.04245), // 갤러리아포레의 위도, 경도로 변경해주세요
+        center: new window.naver.maps.LatLng(37.545632, 127.04245),
         zoom: 100,
       });
 
       const marker = new window.naver.maps.Marker({
-        position: new window.naver.maps.LatLng(37.545632, 127.04245), // 마커 위치도 갤러리아포레의 위도, 경도로 변경해주세요
+        position: new window.naver.maps.LatLng(37.545632, 127.04245),
         map: map,
       });
     };

@@ -29,6 +29,7 @@ const Thanks = () => {
           <Introduce>아들</Introduce>
           <Introduce>김성훈</Introduce>
         </IntroduceWrapper>
+        <ReverseLine />
         <IntroduceWrapper>
           <Introduce>장세탁 . 이인화의</Introduce>
           <Introduce>딸</Introduce>
@@ -59,6 +60,13 @@ const Image = styled.img`
   width: 50%;
   border: 0px;
   object-fit: cover;
+`;
+
+const ReverseLine = styled.div`
+  height: 50px;
+  width: 1px;
+  background-color: #e1e1e1;
+  margin: 10px 0;
 `;
 
 const Title = styled.div`

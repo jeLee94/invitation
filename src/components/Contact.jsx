@@ -10,6 +10,13 @@ const Container = styled.div`
   align-items: center;
   gap: 20px;
   padding: 50px 0;
+  font-family: "MapoFlowerIsland";
+`;
+
+const Title = styled.div`
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 10px 0;
 `;
 
 const ContactTitle = styled.div`
@@ -18,7 +25,6 @@ const ContactTitle = styled.div`
   gap: 10px;
   font-size: 20px;
   font-weight: bold;
-  font-family: "MapoFlowerIsland";
 `;
 
 const Icon = styled.a`
@@ -41,7 +47,6 @@ const Wrapper = styled.div`
   gap: 30px;
   font-size: 20px;
   font-weight: bold;
-  font-family: "MapoFlowerIsland";
 `;
 
 const ParentContainer = styled.div`
@@ -55,6 +60,7 @@ const ParentContainer = styled.div`
 export default function Contact() {
   return (
     <Container>
+      <Title>Contact</Title>
       <ContactTitle>
         신랑에게 연락하기
         <Icon href="tel:+821012345678">📞</Icon>
