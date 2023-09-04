@@ -5,7 +5,7 @@ import { styled } from "styled-components";
 const Location = () => {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NAVER_MAP_API_KEY}`;
+    script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.REACT_APP_NAVER_MAP_API_KEY}`;
     script.onload = () => {
       const map = new window.naver.maps.Map("map", {
         center: new window.naver.maps.LatLng(37.545632, 127.04245),
