@@ -9,7 +9,7 @@ const Location = () => {
     script.onload = () => {
       const map = new window.naver.maps.Map("map", {
         center: new window.naver.maps.LatLng(37.545632, 127.04245),
-        zoom: 17,
+        zoom: 12,
       });
 
       const marker = new window.naver.maps.Marker({

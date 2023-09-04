@@ -115,4 +115,5 @@ const CopyRight = styled.div`
   text-align: center;
   margin-top: 20px;
   color: #a7a6a6;
+  padding-bottom: 20px;
 `;
