@@ -1,23 +1,49 @@
 // Gallery.js
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
   position: relative;
   width: 100%;
   max-width: 400px;
-  margin: 50px auto;
+  padding: 30px 0 0 0;
+  margin: 30px auto;
+  font-family: "MapoFlowerIsland";
+  background-color: #fff;
+`;
+
+const SubTitle = styled.div`
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0;
+  text-align: center;
+`;
+
+const Title = styled.div`
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 20px 0;
+  text-align: center;
+`;
+
+const ImageContainer = styled.div`
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  scroll-behavior: smooth;
+  transition: 0.5s ease;
 `;
 
 const Image = styled.img`
   width: 100%;
   display: block;
   border-radius: 5px;
+  transition: 0.5s ease;
 `;
 
 const Arrow = styled.button`
   position: absolute;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   background-color: transparent;
   color: white;
@@ -25,19 +51,20 @@ const Arrow = styled.button`
   cursor: pointer;
   font-size: 24px;
   padding: 10px;
-  transition: 0.3s;
+  transition: 0.5s ease;
 `;
 
 const LeftArrow = styled(Arrow)`
   left: 10px;
+  transition: left 0.5s ease;
 `;
 
 const BeforeArrow = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -54,14 +81,15 @@ const BeforeArrow = () => {
 
 const RightArrow = styled(Arrow)`
   right: 10px;
+  transition: right 0.5s ease;
 `;
 
 const NextArrow = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -98,27 +126,72 @@ export default function Gallery() {
     "/images/16.jpeg",
   ];
 
-  const [currentImage, setCurrentImage] = useState(0);
+  const myRef = useRef(null);
 
-  useEffect(() => {
-    if (currentImage < 0) {
-      setCurrentImage(images.length - 1);
-    } else if (currentImage >= images.length) {
-      setCurrentImage(0);
+  const prevClick = () => {
+    const slide = myRef.current;
+    slide.scrollLeft -= slide.offsetWidth;
+    if (slide.scrollLeft <= 0) {
+      slide.scrollLeft = slide.scrollWidth;
     }
-  }, [currentImage, images.length]);
+  };
+
+  const nextClick = () => {
+    const slide = myRef.current;
+    //slide.offsetWidth -> className app의 width 크기(margin을 제외한 border,padding 크기 까지)
+    //slide.scrollLeft -> 요소의 수평 스크롤 위치를 나타낸다
+    slide.scrollLeft += slide.offsetWidth;
+    if (slide.scrollLeft >= slide.scrollWidth - slide.offsetWidth - 10) {
+      slide.scrollLeft = 0;
+    }
+  };
+
+  const [autoSlide, setAutoSlide] = useState(true);
+  const timerRef = useRef(null);
+  useEffect(() => {
+    let interval;
+    if (autoSlide) {
+      interval = setInterval(() => {
+        if (myRef.current) {
+          nextClick();
+        }
+      }, 3000);
+    }
+
+    return () => clearInterval(interval); // cleanup to prevent memory leaks
+  }, [autoSlide]);
+
+  const handleArrowClick = (direction) => {
+    setAutoSlide(false);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
+    timerRef.current = setTimeout(() => {
+      setAutoSlide(true);
+    }, 3000);
+
+    if (direction === "prev") {
+      prevClick();
+    } else {
+      nextClick();
+    }
+  };
 
   return (
     <Container>
-      <Image
-        src={images[currentImage]}
-        alt={`Gallery image ${currentImage + 1}`}
-      />
+      <SubTitle>G A L L E R Y</SubTitle>
+      <Title>웨딩 갤러리</Title>
+      <ImageContainer ref={myRef}>
+        {images.map((image, index) => (
+          <Image key={index} src={image} alt={`Gallery image ${index + 1}`} />
+        ))}
+      </ImageContainer>
 
-      <LeftArrow onClick={() => setCurrentImage((prev) => prev - 1)}>
+      <LeftArrow onClick={() => handleArrowClick("prev")}>
         <BeforeArrow />
       </LeftArrow>
-      <RightArrow onClick={() => setCurrentImage((prev) => prev + 1)}>
+      <RightArrow onClick={() => handleArrowClick("next")}>
         <NextArrow />
       </RightArrow>
     </Container>
