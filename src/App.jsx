@@ -4,6 +4,7 @@ import Thanks from "./components/Thanks";
 import Location from "./components/Location";
 import Contact from "./components/Contact";
 import { Share } from "./components/Share";
+import Calendar from "./components/Calendar";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
       <Thanks />
       <Contact />
       <Gallery />
+      <Calendar />
       <Location />
       <Share />
 
