@@ -9,7 +9,6 @@ export default function App() {
   return (
     <div style={{ backgroundColor: "#f6f4f4" }}>
       <head>
-        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
         <style>
           {`
           @font-face {
