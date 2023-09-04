@@ -21,7 +21,7 @@ export const Share = () => {
         content: {
           title: "김성훈 🩷 장보경 결혼합니다.",
           description: "10월 9일 월요일 오후 2시",
-          imageUrl: "https://ibb.co/d012cp1",
+          imageUrl: "https://i.ibb.co/d012cp1/2023-09-04-10-36-11.png",
           link: {
             mobileWebUrl: "https://invitation-rust.vercel.app/",
             webUrl: "https://invitation-rust.vercel.app/",
