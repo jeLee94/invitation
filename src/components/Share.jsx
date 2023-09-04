@@ -3,41 +3,56 @@ import { styled } from "styled-components";
 
 export const Share = () => {
   useEffect(() => {
-    if (window.Kakao) {
-      window.Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
-    }
+    const script = document.createElement("script");
+    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => document.body.removeChild(script);
   }, []);
-
-  const handleShareKakaoClick = () => {
+  const shareKakao = () => {
     if (window.Kakao) {
       const kakao = window.Kakao;
+      if (!kakao.isInitialized()) {
+        kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
+      }
 
-      kakao.Share.sendDefault({
+      kakao.Link.sendDefault({
         objectType: "feed",
         content: {
-          title: "청첩장",
-          description: "초대합니다",
-          imageUrl: "",
+          title: "title",
+          description: "설명",
+          imageUrl: "이미지 url",
           link: {
-            mobileWebUrl: "./",
-            webUrl: "./",
+            mobileWebUrl: "https://invitation-rust.vercel.app/",
+            webUrl: "https://invitation-rust.vercel.app/",
           },
         },
+        buttons: [
+          {
+            title: "title",
+            link: {
+              mobileWebUrl: "https://invitation-rust.vercel.app/",
+              webUrl: "https://invitation-rust.vercel.app/",
+            },
+          },
+        ],
       });
     }
   };
+
   return (
-    <ShareKaKaoBtn onClick={handleShareKakaoClick}>
-      Kakao로 공유하기
-    </ShareKaKaoBtn>
+    <div>
+      <ShareKaKaoBtn onClick={shareKakao} />
+    </div>
   );
 };
 
 const ShareKaKaoBtn = styled.button`
-  display: block;
-  width: 2rem;
-  height: 2rem;
+  display: flex;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   overflow: hidden;
+  margin: 50px auto;
   cursor: pointer;
 `;
