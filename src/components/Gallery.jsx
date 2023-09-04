@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Container = styled.div`
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   margin: 50px auto;
 `;
 

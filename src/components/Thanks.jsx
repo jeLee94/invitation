@@ -42,7 +42,7 @@ const Thanks = () => {
 export default Thanks;
 
 const ThanksContainer = styled.header`
-  max-width: 600px;
+  max-width: 400px;
   background-color: #f8efdcff;
   font-family: "MapoFlowerIsland";
   text-align: center;
