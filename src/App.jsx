@@ -3,11 +3,13 @@ import Header from "./components/Header";
 import Thanks from "./components/Thanks";
 import Location from "./components/Location";
 import Contact from "./components/Contact";
+import { Share } from "./components/Share";
 
 export default function App() {
   return (
     <div style={{ backgroundColor: "#f6f4f4" }}>
       <head>
+        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
         <style>
           {`
           @font-face {
@@ -28,6 +30,7 @@ export default function App() {
       <Contact />
       <Gallery />
       <Location />
+      <Share />
 
       {/* 이곳에 다른 컴포넌트나 내용을 추가할 수 있습니다. */}
     </div>
