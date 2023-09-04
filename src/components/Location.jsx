@@ -9,7 +9,7 @@ const Location = () => {
     script.onload = () => {
       const map = new window.naver.maps.Map("map", {
         center: new window.naver.maps.LatLng(37.545632, 127.04245),
-        zoom: 50,
+        zoom: 17,
       });
 
       const marker = new window.naver.maps.Marker({
@@ -79,7 +79,7 @@ const Line = styled.div`
 `;
 
 const MapStyledDiv = styled.div`
-  width: 24rem;
+  max-width: 24rem;
   height: 24rem;
   margin: 0 auto;
   border-radius: 1rem;
