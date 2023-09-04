@@ -32,7 +32,8 @@ const Location = () => {
         <TitleWrapper>
           <Title>보테가마지오</Title>
           <SubTitle>
-            서울시 성동구 서울숲2길 32-14 갤러리아포레 G층(B2)
+            서울시 성동구 서울숲2길 32-14 <br />
+            갤러리아포레 G층(B2)
           </SubTitle>
           <Content>02-3409-0123</Content>
         </TitleWrapper>
@@ -71,7 +72,7 @@ const Line = styled.div`
 `;
 
 const MapStyledDiv = styled.div`
-  width: 25rem;
+  width: 24rem;
   height: 31.25rem;
   margin: 0 auto;
   border-radius: 1rem;

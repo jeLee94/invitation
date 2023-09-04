@@ -4,7 +4,7 @@ import React from "react";
 const Thanks = () => {
   return (
     <ThanksContainer>
-      <Title>임시 타이틀</Title>
+      <Image />
       <Content>
         서로가 마주보며 다져온 사랑을
         <br />
@@ -35,6 +35,7 @@ const Thanks = () => {
           <Introduce>장보경</Introduce>
         </IntroduceWrapper>
       </IntroduceContainer>
+      {/* <Image /> */}
     </ThanksContainer>
   );
 };
@@ -43,13 +44,23 @@ export default Thanks;
 
 const ThanksContainer = styled.header`
   max-width: 400px;
-  background-color: #f8efdcff;
+  background-color: #fff;
+  color: #000;
   font-family: "MapoFlowerIsland";
   text-align: center;
   margin: 0 auto;
   padding: 50px 0;
   height: 100%;
 `;
+
+const Image = styled.img`
+  margin: 10px auto;
+  content: url("/images/sb.png");
+  width: 50%;
+  border: 0px;
+  object-fit: cover;
+`;
+
 const Title = styled.div`
   font-size: 2rem;
   font-weight: 700;
