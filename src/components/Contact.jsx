@@ -9,14 +9,15 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 50px 0;
+  padding: 30px 0;
   font-family: "MapoFlowerIsland";
 `;
 
 const Title = styled.div`
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  padding: 10px 0;
+  padding: 20px 0;
+  text-align: center;
 `;
 
 const ContactTitle = styled.div`
@@ -54,7 +55,7 @@ const ParentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 50px 0;
+  padding: 30px 0;
 `;
 
 export default function Contact() {
@@ -64,24 +65,24 @@ export default function Contact() {
       <ContactTitle>
         신랑에게 연락하기
         <Icon href="tel:+821012345678">📞</Icon>
-        <Icon href="YOUR_KAKAOTALK_LINK_HERE">💬</Icon>
+        <Icon href="sms:+821012345678">💬</Icon>
       </ContactTitle>
 
       <ContactTitle>
         신부에게 연락하기
         <Icon href="tel:+821098765432">📞</Icon>
-        <Icon href="YOUR_KAKAOTALK_LINK_FOR_BRIDE">💬</Icon>
+        <Icon href="sms:+821012345678">💬</Icon>
       </ContactTitle>
       <Wrapper>
         <ParentContainer>
           신랑측 혼주
           <Icon href="tel:+821098765432">📞</Icon>
-          <Icon href="YOUR_KAKAOTALK_LINK_FOR_BRIDE">💬</Icon>
+          <Icon href="sms:+821012345678">💬</Icon>
         </ParentContainer>
         <ParentContainer>
           신부측 혼주
           <Icon href="tel:+821098765432">📞</Icon>
-          <Icon href="YOUR_KAKAOTALK_LINK_FOR_BRIDE">💬</Icon>
+          <Icon href="sms:+821012345678">💬</Icon>
         </ParentContainer>
       </Wrapper>
     </Container>
