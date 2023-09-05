@@ -5,10 +5,11 @@ import Location from "./components/Location";
 import Contact from "./components/Contact";
 import { Share } from "./components/Share";
 import Calendar from "./components/Calendar";
+import Account from "./components/Account";
 
 export default function App() {
   return (
-    <div style={{ backgroundColor: "#f6f4f4" }}>
+    <div style={{ backgroundColor: "#fcf8f8c9" }}>
       <head>
         <style>
           {`
@@ -18,12 +19,39 @@ export default function App() {
     font-weight: normal;
     font-style: normal;
 }
+          @font-face {
+    font-family: 'GangwonEdu_OTFLightA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFLightA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+            @font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ghanachoco';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
 `}
         </style>
-        <title>청첩장</title>
-        <meta name="description" content="홍길동 & 박영희의 청첩장" />
-        <link rel="icon" href="/favicon.ico" />
       </head>
       <Header />
       <Thanks />
@@ -31,6 +59,7 @@ export default function App() {
       <Gallery />
       <Calendar />
       <Location />
+      <Account />
       <Share />
 
       {/* 이곳에 다른 컴포넌트나 내용을 추가할 수 있습니다. */}
