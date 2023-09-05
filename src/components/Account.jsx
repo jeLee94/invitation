@@ -104,7 +104,7 @@ const Account = () => {
             </svg>
           </Arrow>
         </AccountTitle>
-        {showDetails && (
+        {showDetails2 && (
           <>
             <AccountContainer>
               <AccountText>
