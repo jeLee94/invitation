@@ -23,16 +23,16 @@ export const Share = () => {
           description: "10월 9일 월요일 오후 2시",
           imageUrl: "https://i.ibb.co/s5jdcsp/2023-09-04-10-36-11.png",
           link: {
-            mobileWebUrl: "https://invitation-rust.vercel.app/",
-            webUrl: "https://invitation-rust.vercel.app/",
+            mobileWebUrl: "https://bksh.site/",
+            webUrl: "https://bksh.site/",
           },
         },
         buttons: [
           {
             title: "청첩장 보러가기",
             link: {
-              mobileWebUrl: "https://invitation-rust.vercel.app/",
-              webUrl: "https://invitation-rust.vercel.app/",
+              mobileWebUrl: "https://bksh.site/",
+              webUrl: "https://bksh.site/",
             },
           },
         ],
@@ -51,19 +51,16 @@ export const Share = () => {
     alert("링크가 복사되었습니다!");
   };
 
-  // HTML
-  <button onclick="copyLink()">링크 복사하기</button>;
-
   return (
     <>
       <ShareContainer>
         <ShareButton onClick={shareKakao}>
-          <KakaoImg src="./images/kakao.png" alt="kakao" />
+          <KakaoImg src="./icon/kakao.png" alt="kakao" />
           카카오톡으로 공유하기
         </ShareButton>
         <ShareButton onClick={copyLink}>
-          <LinkImg src="./images/link.png" alt="line" />
-          링크 복사하기
+          <LinkImg src="./icon/link2.png" alt="line" />
+          링크주소 복사하기
         </ShareButton>
       </ShareContainer>
 
@@ -84,7 +81,8 @@ const ShareContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   padding: 2.1875rem 0;
-  font-family: "MapoFlowerIsland";
+  font-family: "GangwonEdu_OTFLightA";
+  color: #656565;
   gap: 15px;
 `;
 
