@@ -6,23 +6,28 @@ const Thanks = () => {
     <ThanksContainer>
       <Image />
       <Content>
-        서로가 마주보며 다져온 사랑을
+        첫 번째 가을, 설레는 첫 만남
         <br />
         <br />
-        이제 함께 한 곳을 바라보며
+        <br />
+        두 번째 가을, 서로에게 스며들었고
         <br />
         <br />
-        걸어갈 수 있는 큰 사랑으로 키우고자 합니다.
+        <br />
+        세 번째 가을, 예쁜 꿈을 꾸게 되었습니다.
         <br />
         <br />
-        저희 두 사람이 사랑의 이름으로
+        <br />
+        나란히 두손 꼭 잡고 걸어갈 그 길을
         <br />
         <br />
-        지켜나갈 수 있게 앞날을
+        <br />
+        하나가 되는 순간 함께 축복해주세요
         <br />
         <br />
-        축복해 주시면 감사하겠습니다.
+        <br />
       </Content>
+      <InviImg />
       <IntroduceContainer>
         <IntroduceWrapper>
           <Introduce>
@@ -30,7 +35,7 @@ const Thanks = () => {
           </Introduce>
           <Introduce>아들</Introduce>
           <Introduce>
-            <span style={{ color: "#000" }}>김성훈</span>
+            <span style={{ color: "#000", fontSize: "1.1rem" }}>김성훈</span>
           </Introduce>
         </IntroduceWrapper>
         <ReverseLine />
@@ -40,7 +45,7 @@ const Thanks = () => {
           </Introduce>
           <Introduce>딸</Introduce>
           <Introduce>
-            <span style={{ color: "#000" }}>장보경</span>
+            <span style={{ color: "#000", fontSize: "1.1rem" }}>장보경</span>
           </Introduce>
         </IntroduceWrapper>
       </IntroduceContainer>
@@ -55,7 +60,7 @@ const ThanksContainer = styled.header`
   max-width: 400px;
   background-color: #fff;
   color: #3e3e3e;
-  font-family: "MapoFlowerIsland";
+  font-family: "GangwonEdu_OTFLightA";
   text-align: center;
   margin: 0 auto;
   padding: 50px 0;
@@ -83,7 +88,7 @@ const Title = styled.div`
   padding: 10px 0;
 `;
 const Content = styled.div`
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   padding: 30px 0;
 `;
@@ -104,4 +109,15 @@ const IntroduceContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
+`;
+
+const InviImg = styled.img`
+  margin: 10px auto;
+  content: url("/images/invi.jpeg");
+  width: 70%;
+  border: 0px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  filter: blur(0.2px) brightness(1.2) contrast(0.9);
 `;
