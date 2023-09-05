@@ -58,7 +58,7 @@ const Calendar = () => {
 export default Calendar;
 
 const CalendarWrapper = styled.div`
-  font-family: "MapoFlowerIsland";
+  font-family: "GangwonEdu_OTFLightA";
   font-size: 1.3rem;
   display: flex;
   justify-content: center;
@@ -94,16 +94,16 @@ const DateTd = styled.td`
 `;
 const SubTitle = styled.div`
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 300;
   padding: 0;
   text-align: center;
-  font-family: "MapoFlowerIsland";
+  font-family: "GangwonEdu_OTFLightA";
 `;
 
 const Title = styled.div`
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 300;
   padding: 10px 0;
   text-align: center;
-  font-family: "MapoFlowerIsland";
+  font-family: "GangwonEdu_OTFLightA";
 `;

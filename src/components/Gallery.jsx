@@ -8,7 +8,7 @@ const Container = styled.div`
   max-width: 400px;
   padding: 30px 0 0 0;
   margin: 30px auto;
-  font-family: "MapoFlowerIsland";
+  font-family: "GangwonEdu_OTFLightA";
   background-color: #fff;
 `;
 
@@ -17,6 +17,7 @@ const SubTitle = styled.div`
   font-weight: 700;
   padding: 0;
   text-align: center;
+  font-family: "MapoFlowerIsland";
 `;
 
 const Title = styled.div`
@@ -39,6 +40,7 @@ const Image = styled.img`
   display: block;
   border-radius: 5px;
   transition: 0.5s ease;
+  filter: brightness(1.2) blur(0.2px) contrast(0.9);
 `;
 
 const Arrow = styled.button`
@@ -127,27 +129,42 @@ export default function Gallery() {
   ];
 
   const myRef = useRef(null);
+  const extendedImages = [
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+  ];
+
+  const nextClick = () => {
+    const slide = myRef.current;
+    slide.scrollLeft += slide.offsetWidth;
+
+    if (slide.scrollLeft >= slide.scrollWidth - slide.offsetWidth * 2) {
+      slide.scrollLeft = slide.offsetWidth; // Skip the first cloned image
+    }
+  };
 
   const prevClick = () => {
     const slide = myRef.current;
     slide.scrollLeft -= slide.offsetWidth;
-    if (slide.scrollLeft <= 0) {
-      slide.scrollLeft = slide.scrollWidth;
-    }
-  };
 
-  const nextClick = () => {
-    const slide = myRef.current;
-    //slide.offsetWidth -> className app의 width 크기(margin을 제외한 border,padding 크기 까지)
-    //slide.scrollLeft -> 요소의 수평 스크롤 위치를 나타낸다
-    slide.scrollLeft += slide.offsetWidth;
-    if (slide.scrollLeft >= slide.scrollWidth - slide.offsetWidth - 10) {
-      slide.scrollLeft = 0;
+    if (slide.scrollLeft <= 0) {
+      slide.scrollLeft = slide.offsetWidth * (extendedImages.length - 2); // Move to the second last (real last) image
     }
   };
 
   const [autoSlide, setAutoSlide] = useState(true);
   const timerRef = useRef(null);
+
+  useEffect(() => {
+    if (myRef.current) {
+      myRef.current.scrollLeft = myRef.current.offsetWidth;
+    }
+  }, []);
   useEffect(() => {
     let interval;
     if (autoSlide) {
@@ -183,7 +200,7 @@ export default function Gallery() {
       <SubTitle>G A L L E R Y</SubTitle>
       <Title>웨딩 갤러리</Title>
       <ImageContainer ref={myRef}>
-        {images.map((image, index) => (
+        {extendedImages.map((image, index) => (
           <Image key={index} src={image} alt={`Gallery image ${index + 1}`} />
         ))}
       </ImageContainer>
