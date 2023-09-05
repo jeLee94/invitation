@@ -19,6 +19,8 @@ const Location = () => {
     };
 
     document.head.appendChild(script);
+    // https://apis-navi.kakaomobility.com/v1/directions?origin=127.11015314141542,37.39472714688412&destination=127.10824367964793,37.401937080111644&waypoints=&priority=RECOMMEND&car_fuel=GASOLINE&car_hipass=false&alternatives=false&road_details=false" \
+    // -H "Authorization: KakaoAK${process.env.REACT_APP_KAKAO_MAP_KEY}`}
 
     return () => {
       document.head.removeChild(script);
@@ -35,28 +37,93 @@ const Location = () => {
           서울시 성동구 서울숲2길 32-14
           <br /> 갤러리아포레 G층(B2)
         </SubWhere>
-        <SubContent>Tel. 02-3409-0123</SubContent>
+        <SubAContent href="tel:0234090123">📞 02-3409-0123</SubAContent>
       </WhereWrapper>
       <MapStyledDiv id="map" />
+      <NavigationButtons>
+        <NavigationButton
+          href={`https://map.naver.com/v5/directions/-/14126848.929436948,4508870.622796846,보테가마지오,12080440,PLACE_POI/-/car`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon src="./icon/navermap.webp" alt="naver" />
+          네이버 지도
+        </NavigationButton>
+        <NavigationButton
+          href={`https://map.kakao.com/link/to/보테가마지오,37.545632,127.04245`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon src="./icon/kakao_map.png" alt="kakaomap" />
+          카카오맵
+        </NavigationButton>
+        <NavigationButton
+          href={`https://kakaonavi-wguide.kakao.com/openapi/drive?from=이름없는출발지,37.545632,127.04245&to=보테가마지오,37.545632,127.04245&appkey=${process.env.REACT_APP_KAKAO_MAP_KEY}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon src="./icon/kakaonavi.png" alt="kakonavi" />
+          카카오내비
+        </NavigationButton>
+      </NavigationButtons>
+
+      <Content
+        style={{
+          cursor: "pointer",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          color: "#6b6b6b",
+        }}
+        onClick={() =>
+          navigator.clipboard
+            .writeText("서울시 성동구 서울숲2길 32-14 갤러리아포레 G층(B2)")
+            .then(() => {
+              alert(`주소가 복사되었습니다!`);
+            })
+        }
+      >
+        <Icon src="./icon/copy.png" alt="copy" /> 주소 복사하기
+      </Content>
       <AddressContainer>
-        <SubContent>주차</SubContent>
-        <Content>건물 내 B3 ~ B7 2시간 무료주차(주차등록 필요)</Content>
+        <SubContent>
+          <Icon src="./icon/parking.png" alt="parking" />
+          주차
+        </SubContent>
+        <ContentWrapper>
+          <Content>건물 내 B3 ~ B7 2시간 무료주차</Content>
+          <Content>안내 데스크에서 주차 등록 필요</Content>
+        </ContentWrapper>
         <Line />
-        <SubContent>지하철</SubContent>
-        <Content>
-          <YellowCircle />
-          분당선 서울숲역 5번출구 도보 5분
-        </Content>
-        <Content>
-          <GreenCircle />
-          2호선 뚝섬역 8번출구 도보 10분
-        </Content>
+
+        <SubContent>
+          <Icon src="./icon/subway.png" alt="parking" />
+          지하철
+        </SubContent>
+        <ContentWrapper>
+          <Content>
+            <YellowCircle />
+            분당선 서울숲역 5번출구 도보 5분
+          </Content>
+          <Content>
+            <GreenCircle />
+            2호선 뚝섬역 8번출구 도보 10분
+          </Content>
+        </ContentWrapper>
         <Line />
-        <SubContent>버스</SubContent>
-        <Content>121, 2013, 2224, 2413, 성동13</Content>
-        <Content>- 성동구민종합체육센터 정류장(양방향)</Content>
-        <Content>2016</Content>
-        <Content>- 뚝섬역 8번출구(성수역 방면 버스)</Content>
+
+        <SubContent>
+          <Icon src="./icon/bus.png" alt="parking" />
+          버스
+        </SubContent>
+        <ContentWrapper>
+          <Content>성동구민종합체육센터 정류장(양방향)</Content>
+          <Content>121, 2013, 2224, 2413, 성동13</Content>
+          <br />
+          <Content>뚝섬역 8번출구(성수역 방면 버스)</Content>
+          <Content>2016</Content>
+        </ContentWrapper>
       </AddressContainer>
     </LocationWrapper>
   );
@@ -68,7 +135,7 @@ const LocationWrapper = styled.div`
   max-width: 400px;
   margin: 0 auto;
   padding: 0 12px;
-  font-family: "MapoFlowerIsland";
+  font-family: "GangwonEdu_OTFLightA";
 `;
 
 const Line = styled.div`
@@ -82,10 +149,8 @@ const MapStyledDiv = styled.div`
   max-width: 24rem;
   height: 24rem;
   margin: 0 auto;
-  border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 `;
 
 const AddressContainer = styled.div`
@@ -93,7 +158,7 @@ const AddressContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  padding: 50px 0;
+  padding: 50px 0 20px 0;
   margin: 0 auto;
 `;
 
@@ -129,13 +194,32 @@ const Content = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 5px;
+  line-height: 1.6rem;
 `;
 
 const SubContent = styled.div`
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  padding: 0;
-  color: #292929;
+  padding: 10px 0;
+  color: #39563b;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+`;
+
+const SubAContent = styled.a`
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 10px 0;
+  color: #39563b;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 `;
 
 const SubTitle = styled.div`
@@ -158,7 +242,7 @@ const YellowCircle = styled.div`
   height: 10px;
   border-radius: 50%;
   background-color: #fabd00;
-  margin: 0 auto;
+  margin: 0;
 `;
 
 //초록색 동그라미
@@ -167,5 +251,47 @@ const GreenCircle = styled.div`
   height: 10px;
   border-radius: 50%;
   background-color: #00a650;
-  margin: 0 auto;
+  margin: 0;
+`;
+
+const NavigationButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 1px 1rem rgba(179, 179, 179, 0.2);
+  width: 100%;
+  background-color: #eee;
+  margin-bottom: 10px;
+`;
+
+const NavigationButton = styled.a`
+  padding: 20px 0;
+  background-color: #eee;
+  border-right: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-family: "Pretendard-Regular";
+  font-size: 12px;
+  min-width: 127px;
+  display: flex;
+  justify-content: center;
+`;
+
+const Icon = styled.img`
+  width: 20px;
+  height: 20px;
+
+  border: 0px;
+  object-fit: cover;
+`;
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
 `;
