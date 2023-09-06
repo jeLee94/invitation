@@ -89,7 +89,7 @@ const Row = styled.div`
   }
 `;
 
-const Call = styled.img`
+const Call = styled.a`
   content: url("./icon/call.png");
   border: none;
   cursor: pointer;
@@ -167,7 +167,7 @@ export default function Contact() {
               <Row>
                 <Name label={key}>{key}</Name>
                 <Name label={key}>{value.이름}</Name>
-                <Call label={key} href={`tel:${value.전화}`} />
+                <Call href={`tel:${value.전화}`} />
                 <SMS href={`sms:${value.전화}`} />
               </Row>
             </Section>
