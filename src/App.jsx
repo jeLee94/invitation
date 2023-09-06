@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import { Share } from "./components/Share";
 import Calendar from "./components/Calendar";
 import Account from "./components/Account";
+import Dday from "./components/Dday";
 
 export default function App() {
   return (
@@ -58,6 +59,7 @@ export default function App() {
       <Contact />
       <Gallery />
       <Calendar />
+      <Dday />
       <Location />
       <Account />
       <Share />
