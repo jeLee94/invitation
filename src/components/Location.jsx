@@ -85,7 +85,13 @@ const Location = () => {
         }
       >
         <Icon src="./icon/copy.png" alt="copy" />
-        <div style={{ fontFamily: "Pretendard-Regular", fontSize: "13px" }}>
+        <div
+          style={{
+            fontFamily: "Pretendard-Regular",
+            fontSize: "13px",
+            marginRight: "10px",
+          }}
+        >
           주소 복사하기
         </div>
       </Content>
@@ -177,20 +183,20 @@ const WhereWrapper = styled.div`
 
 const Where = styled.div`
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 300;
   padding: 0;
 `;
 
 const SubWhere = styled.div`
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   padding: 20px 0;
   color: #6d6d6d;
 `;
 
 const Content = styled.div`
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   padding: 0;
   color: #515151;
   display: flex;
@@ -215,7 +221,7 @@ const SubContent = styled.div`
 const SubAContent = styled.a`
   text-decoration: none;
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 500;
   padding: 10px 0;
   color: #39563b;
   display: flex;
@@ -227,7 +233,7 @@ const SubAContent = styled.a`
 
 const SubTitle = styled.div`
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 500;
   padding: 0;
   text-align: center;
   font-family: "MapoFlowerIsland";
@@ -235,7 +241,7 @@ const SubTitle = styled.div`
 
 const Title = styled.div`
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 500;
   padding: 20px 0;
   text-align: center;
 `;

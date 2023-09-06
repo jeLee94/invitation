@@ -6,7 +6,8 @@ const Thanks = () => {
     <ThanksContainer>
       <Image />
       <Content>
-        첫 번째 가을, 설레는 첫 만남
+        첫 번째 <span style={{ textShadow: "0 1px 1rem #cd8a1f" }}>가을</span>,
+        설레는 첫 만남
         <br />
         <br />
         <br />
@@ -82,19 +83,14 @@ const ReverseLine = styled.div`
   margin: 10px 0;
 `;
 
-const Title = styled.div`
-  font-size: 2rem;
-  font-weight: 700;
-  padding: 10px 0;
-`;
 const Content = styled.div`
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 500;
   padding: 30px 0;
 `;
 const Introduce = styled.div`
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 500;
   padding: 5px 0;
   color: #a7a6a6;
 `;
@@ -102,6 +98,7 @@ const Introduce = styled.div`
 const IntroduceWrapper = styled.div`
   width: 100%;
   border: 0px;
+  font-weight: 500;
 `;
 
 const IntroduceContainer = styled.div`
@@ -119,5 +116,4 @@ const InviImg = styled.img`
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-  filter: blur(0.2px) brightness(1.2) contrast(0.9);
 `;

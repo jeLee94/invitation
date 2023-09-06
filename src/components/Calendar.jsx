@@ -8,8 +8,8 @@ const Calendar = () => {
     .map((_, i) => i + 1); // 예시로 31일까지 표시합니다.
 
   return (
-    <div style={{ padding: "80px 0" }}>
-      <Title>2023 / 10 / 09</Title>
+    <CalendarContainer>
+      <Title>2023 | 10 | 09</Title>
       <SubTitle>월요일 오후 2시</SubTitle>
       <CalendarWrapper>
         <table className="calendar" id="calendar">
@@ -51,11 +51,17 @@ const Calendar = () => {
           </tbody>
         </table>
       </CalendarWrapper>
-    </div>
+    </CalendarContainer>
   );
 };
 
 export default Calendar;
+
+const CalendarContainer = styled.div`
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 80px 0;
+`;
 
 const CalendarWrapper = styled.div`
   font-family: "GangwonEdu_OTFLightA";

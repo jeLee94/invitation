@@ -24,6 +24,7 @@ const SubTitle = styled.div`
 const Title = styled.div`
   font-size: 1.2rem;
   font-weight: 300;
+  padding: 20px 0 0 0;
   text-align: center;
 `;
 
@@ -108,23 +109,17 @@ const SMS = styled.a`
   height: 20px;
   border: none;
   cursor: pointer;
-  text-decoration: underline;
-  color: blue;
-
-  &:hover {
-    color: darkblue;
-  }
 `;
 
 const Name = styled.div`
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 300;
   padding: 0;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-
-  color: ${({ label }) => (label.startsWith("신랑") ? "#008cff" : "#eb9494")};
+  font-family: "Pretendard";
+  color: ${({ label }) => (label.startsWith("신랑") ? "#008cff" : "#ee8b8b")};
 `;
 
 export default function Contact() {
@@ -166,7 +161,10 @@ export default function Contact() {
             <Section key={index}>
               <Row>
                 <Name label={key}>{key}</Name>
-                <Name label={key}>{value.이름}</Name>
+                <Name label={key}>
+                  <div style={{ fontWeight: "500" }}>{value.이름}</div>
+                </Name>
+
                 <Call href={`tel:${value.전화}`} />
                 <SMS href={`sms:${value.전화}`} />
               </Row>

@@ -80,7 +80,7 @@ const ShareContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 2.1875rem 0;
+  padding: 40px 0;
   font-family: "GangwonEdu_OTFLightA";
   color: #656565;
   gap: 15px;

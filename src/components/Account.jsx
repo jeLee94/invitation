@@ -160,7 +160,7 @@ export const AccountWrap = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 50px;
   svg {
     width: 15px;
     height: 14px;
@@ -338,7 +338,7 @@ export const Arrow = styled.div`
 export const Title = styled.div`
   font-family: "MapoFlowerIsland";
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 500;
   padding: 20px 0;
   text-align: center;
 `;
@@ -349,7 +349,7 @@ export const Section = styled.div`
   height: 45px;
   border-radius: 4px;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 500;
   padding: 0;
   margin: 0 auto;
   text-align: center;

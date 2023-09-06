@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const SubTitle = styled.div`
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 500;
   padding: 0;
   text-align: center;
   font-family: "MapoFlowerIsland";
@@ -22,7 +22,7 @@ const SubTitle = styled.div`
 
 const Title = styled.div`
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 500;
   padding: 20px 0;
   text-align: center;
 `;
