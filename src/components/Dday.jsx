@@ -62,6 +62,12 @@ const RemainMessage = styled.div`
   font-family: "MapoFlowerIsland";
 `;
 
+const HeartIcon = styled.img`
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+`;
+
 // D-day 카운트다운
 //오늘 날짜가 2023년 10월 09일 까지 몇일 남았는지 계산
 const Dday = () => {
@@ -124,7 +130,7 @@ const Dday = () => {
         </TimeCard>
       </CountdownContainer>
       <RemainMessage>
-        성훈 <span style={{ color: "#fb6e6e" }}>♥️</span> 보경의 결혼식이
+        성훈 <HeartIcon src="./icon/heart.png" alt="heart" /> 보경의 결혼식이
         <span style={{ color: "#fb6e6e", fontWeight: "bold" }}>
           &nbsp;{timeLeft.day + 1}
         </span>
