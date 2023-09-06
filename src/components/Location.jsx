@@ -57,15 +57,14 @@ const Location = () => {
           <Icon src="./icon/kakao_map.png" alt="kakaomap" />
           카카오맵
         </NavigationButton>
-        <NavigationButton
-          href={`https://apis-navi.kakaomobility.com/v1/directions?origin=127.11015314141542,37.39472714688412&destination=127.10824367964793,37.401937080111644&waypoints=&priority=RECOMMEND&car_fuel=GASOLINE&car_hipass=false&alternatives=false&road_details=false" \
-    -H "Authorization: KakaoAK ${process.env.REACT_APP_KAKAO_MAP_KEY}`}
+        {/* <NavigationButton
+          href={`https://apis-navi.kakaomobility.com/v1/directions?origin=127.11015314141542,37.39472714688412&destination=127.10824367964793,37.401937080111644&waypoints=&priority=RECOMMEND&car_fuel=GASOLINE&car_hipass=false&alternatives=false&road_details=false Authorization: KakaoAK ${process.env.REACT_APP_KAKAO_MAP_KEY}`}
           target="_blank"
           rel="noopener noreferrer"
         >
           <Icon src="./icon/kakaonavi.png" alt="kakonavi" />
           카카오내비
-        </NavigationButton>
+        </NavigationButton> */}
       </NavigationButtons>
 
       <Content
@@ -263,15 +262,15 @@ const NavigationButtons = styled.div`
   display: flex;
   justify-content: center;
   box-shadow: 0 1px 1rem rgba(179, 179, 179, 0.2);
-  width: 100%;
+  width: 95%;
   background-color: #eee;
-  margin-bottom: 10px;
+
+  margin: 0 auto 10px auto;
 `;
 
 const NavigationButton = styled.a`
-  padding: 20px 0;
+  padding: 20px 20px;
   background-color: #eee;
-  border-right: 1px solid #ddd;
   text-decoration: none;
   color: #333;
   cursor: pointer;
