@@ -75,6 +75,9 @@ const Location = () => {
           alignItems: "center",
           justifyContent: "flex-end",
           color: "#6b6b6b",
+          fontFamily: "Pretendard-Regular",
+          fontSize: "13px",
+          marginRight: "10px",
         }}
         onClick={() =>
           navigator.clipboard
@@ -85,15 +88,7 @@ const Location = () => {
         }
       >
         <Icon src="./icon/copy.png" alt="copy" />
-        <div
-          style={{
-            fontFamily: "Pretendard-Regular",
-            fontSize: "13px",
-            marginRight: "10px",
-          }}
-        >
-          주소 복사하기
-        </div>
+        주소 복사하기
       </Content>
       <AddressContainer>
         <SubContent>
@@ -141,9 +136,10 @@ const Location = () => {
 export default Location;
 
 const LocationWrapper = styled.div`
+  background-color: #fff;
   max-width: 400px;
   margin: 0 auto;
-  padding: 0 12px;
+  padding: 40px 12px;
   font-family: "GangwonEdu_OTFLightA";
 `;
 
@@ -204,18 +200,20 @@ const Content = styled.div`
   align-items: center;
   gap: 5px;
   line-height: 1.6rem;
+  font-family: "MapoFlowerIsland";
 `;
 
 const SubContent = styled.div`
   font-size: 1.1rem;
   font-weight: 700;
-  padding: 10px 0;
+  padding: 5px 0;
   color: #39563b;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  font-family: "MapoFlowerIsland";
 `;
 
 const SubAContent = styled.a`
@@ -268,10 +266,13 @@ const NavigationButtons = styled.div`
   display: flex;
   justify-content: center;
   box-shadow: 0 1px 1rem rgba(179, 179, 179, 0.2);
-  width: 95%;
+  width: 24rem;
   background-color: #eee;
-
   margin: 0 auto 10px auto;
+  //하위 항목 사이사이에 1px 선을 그어줌
+  & > * + * {
+    border-left: 1px solid #e0dfdfb3;
+  }
 `;
 
 const NavigationButton = styled.a`

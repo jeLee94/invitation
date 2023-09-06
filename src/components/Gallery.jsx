@@ -6,7 +6,7 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   max-width: 400px;
-  padding: 30px 0 0 0;
+  padding: 50px 0 0 0;
   margin: 30px auto;
   font-family: "GangwonEdu_OTFLightA";
   background-color: #fff;

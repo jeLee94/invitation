@@ -60,12 +60,13 @@ export default Calendar;
 const CalendarContainer = styled.div`
   max-width: 400px;
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 50px 0 0;
 `;
 
 const CalendarWrapper = styled.div`
+  width: 80%;
   font-family: "GangwonEdu_OTFLightA";
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,11 +83,11 @@ const CalendarWrapper = styled.div`
 const DayTh = styled.th`
   color: ${(props) =>
     props.isSunday ? "#cd7171" : props.isSaturday ? "#8484f5" : "#505050"};
-  padding: 10px;
+  padding: 12px;
 `;
 
 const DateTd = styled.td`
-  padding: 7px;
+  padding: 8px;
   text-align: center;
   color: ${(props) =>
     props.isSunday || props.isHighlighted

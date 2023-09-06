@@ -10,12 +10,14 @@ const Thanks = () => {
         설레는 첫 만남
         <br />
         <br />
+        <br />두 번째{" "}
+        <span style={{ textShadow: "0 1px 1rem #cd8a1f" }}>가을</span>, 서로에게
+        스며들었고
         <br />
-        두 번째 가을, 서로에게 스며들었고
         <br />
-        <br />
-        <br />
-        세 번째 가을, 예쁜 꿈을 꾸게 되었습니다.
+        <br />세 번째{" "}
+        <span style={{ textShadow: "0 1px 1rem #cd8a1f" }}>가을</span>, 예쁜
+        꿈을 꾸게 되었습니다.
         <br />
         <br />
         <br />
@@ -23,7 +25,8 @@ const Thanks = () => {
         <br />
         <br />
         <br />
-        하나가 되는 순간 함께 축복해주세요
+        하나가 되는 순간 함께{" "}
+        <span style={{ textShadow: "0 1px 1rem #f77878" }}>축복</span>해주세요
         <br />
         <br />
         <br />

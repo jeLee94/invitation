@@ -28,36 +28,6 @@ const Title = styled.div`
   text-align: center;
 `;
 
-const ContactTitle = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: bold;
-`;
-
-const Icon = styled.a`
-  margin: 0 5px;
-  color: black;
-
-  text-decoration: none;
-  font-size: 24px;
-
-  &:hover {
-    color: darkgray;
-  }
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  font-size: 20px;
-  font-weight: bold;
-`;
-
 const Container = styled.div`
   width: 100%;
   max-width: 320px;
@@ -118,7 +88,7 @@ const Name = styled.div`
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  font-family: "Pretendard";
+  font-family: "MapoFlowerIsland";
   color: ${({ label }) => (label.startsWith("신랑") ? "#008cff" : "#ee8b8b")};
 `;
 
@@ -162,7 +132,7 @@ export default function Contact() {
               <Row>
                 <Name label={key}>{key}</Name>
                 <Name label={key}>
-                  <div style={{ fontWeight: "500" }}>{value.이름}</div>
+                  <div style={{ fontWeight: "700" }}>{value.이름}</div>
                 </Name>
 
                 <Call href={`tel:${value.전화}`} />
