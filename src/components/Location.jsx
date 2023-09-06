@@ -58,7 +58,8 @@ const Location = () => {
           카카오맵
         </NavigationButton>
         <NavigationButton
-          href={`https://kakaonavi-wguide.kakao.com/openapi/drive?from=이름없는출발지,37.545632,127.04245&to=보테가마지오,37.545632,127.04245&appkey=${process.env.REACT_APP_KAKAO_MAP_KEY}`}
+          href={`https://apis-navi.kakaomobility.com/v1/directions?origin=127.11015314141542,37.39472714688412&destination=127.10824367964793,37.401937080111644&waypoints=&priority=RECOMMEND&car_fuel=GASOLINE&car_hipass=false&alternatives=false&road_details=false" \
+    -H "Authorization: KakaoAK ${process.env.REACT_APP_KAKAO_MAP_KEY}`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -84,7 +85,10 @@ const Location = () => {
             })
         }
       >
-        <Icon src="./icon/copy.png" alt="copy" /> 주소 복사하기
+        <Icon src="./icon/copy.png" alt="copy" />
+        <div style={{ fontFamily: "Pretendard-Regular", fontSize: "13px" }}>
+          주소 복사하기
+        </div>
       </Content>
       <AddressContainer>
         <SubContent>
@@ -227,6 +231,7 @@ const SubTitle = styled.div`
   font-weight: 700;
   padding: 0;
   text-align: center;
+  font-family: "MapoFlowerIsland";
 `;
 
 const Title = styled.div`
