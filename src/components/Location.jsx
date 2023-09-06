@@ -266,7 +266,7 @@ const NavigationButtons = styled.div`
   display: flex;
   justify-content: center;
   box-shadow: 0 1px 1rem rgba(179, 179, 179, 0.2);
-  width: 24rem;
+  max-width: 24rem;
   background-color: #eee;
   margin: 0 auto 10px auto;
   //하위 항목 사이사이에 1px 선을 그어줌
