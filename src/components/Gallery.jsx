@@ -40,7 +40,6 @@ const Image = styled.img`
   display: block;
   border-radius: 5px;
   transition: 0.5s ease;
-  filter: brightness(1.2) blur(0.2px) contrast(0.9);
 `;
 
 const Arrow = styled.button`
