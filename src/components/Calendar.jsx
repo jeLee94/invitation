@@ -105,5 +105,5 @@ const Title = styled.div`
   font-weight: 300;
   padding: 10px 0;
   text-align: center;
-  font-family: "GangwonEdu_OTFLightA";
+  font-family: "MapoFlowerIsland";
 `;
