@@ -26,7 +26,7 @@ const Thanks = () => {
         <br />
         <br />
         하나가 되는 순간 함께{" "}
-        <span style={{ textShadow: "0 1px 1rem #f77878" }}>축복</span>해주세요
+        <span style={{ textShadow: "0 1px 1rem #f77878" }}>축복</span>해주세요.
         <br />
         <br />
         <br />
